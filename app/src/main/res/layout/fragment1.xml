@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b1"
     tools:context=".Fragment1">
 
 
+    <ImageView
+        android:id="@+id/CameraPic"
+        android:layout_width="193dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="60dp" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="117dp"
+        android:layout_height="187dp"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="160dp"
+        android:gravity="left"
+        android:text="Waiting..." />
+
     <Button
-        android:id="@+id/button"
-        android:layout_width="251dp"
-        android:layout_height="181dp"
-        android:text="first" />
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="400dp"
+        android:alpha="0.5"
+        android:background="@drawable/shape"
+        android:text="播放音乐"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold" />
+
 
 </FrameLayout>

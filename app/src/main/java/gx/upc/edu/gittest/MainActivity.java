@@ -6,13 +6,15 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.MenuItem;
-
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
     private FragmentTransaction transaction;
+    public  String emotion;
+
     private FragmentManager fragmentManager;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -44,13 +46,17 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         setDefaultFragment();
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
     }
 
-    private void setDefaultFragment() {            // set initial fragment
+
+    private void setDefaultFragment()
+    {            // set initial fragment
         fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.content, new Fragment1());

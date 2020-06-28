@@ -9,12 +9,9 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 
-
 public class MainActivity extends AppCompatActivity {
 
     private FragmentTransaction transaction;
-    public  String emotion;
-
     private FragmentManager fragmentManager;
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -59,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     {            // set initial fragment
         fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.content, new Fragment1());
+        transaction.replace(R.id.content, new Fragment2());
         transaction.commit();
     }
 }

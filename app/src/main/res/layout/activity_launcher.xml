@@ -22,19 +22,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="KEEP HAPPY"
+            android:text="音乐的力量"
             android:textColor="#ce3d3a"
-            android:textSize="26sp" />
+            android:textSize="36sp" />
 
-        <TextView
-            android:id="@+id/tv_splash2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="5dp"
-            android:text="随时随地保持好心情"
-            android:textColor="#FF7F00"
-            android:textSize="30sp" />
+
 
     </LinearLayout>
 

@@ -49,6 +49,23 @@
             </intent-filter>
         </activity>
 
+
+        <activity android:name=".lovemusic"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActivityFullscreen"/>
+
+        <activity android:name=".ServiceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoActivityFullscreen"/>
+
+        <service
+            android:name=".MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+
+
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="gx.upc.edu.gittest.fileProvider"

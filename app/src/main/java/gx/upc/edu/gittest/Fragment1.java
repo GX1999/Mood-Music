@@ -16,8 +16,11 @@ import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import java.io.File;
@@ -28,7 +31,7 @@ import java.util.Map;
 
 public class Fragment1 extends Fragment {
 
-
+    public String emotion0;
     private Uri imageUri;
     private ImageView cameraPic;
     public String Access;
@@ -37,6 +40,28 @@ public class Fragment1 extends Fragment {
     {
 
         super.onActivityCreated(savedInstanceState);
+
+        Button button1 = (Button) getActivity().findViewById(R.id.button1);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent1=new Intent(getActivity(),MusicService.class);
+           //     Toast.makeText(getActivity(),emotion0,Toast.LENGTH_SHORT).show();
+
+                if(emotion0.equals("disgust")||emotion0.equals("surprise")||emotion0.equals("pouty") ||emotion0.equals("grimace"))
+                {
+                    emotion0="neutral";
+                }
+                intent1.putExtra("name",emotion0+"/");
+                getActivity().startService(intent1);
+
+                Intent intent=new Intent(getActivity(),ServiceActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         cameraPic = getActivity().findViewById(R.id.CameraPic);
 
         //  System.out.println(getActivity().getExternalCacheDir());
@@ -166,20 +191,17 @@ public class Fragment1 extends Fragment {
             //      System.out.println("age="+age);
 
             TextView t2 = getActivity().findViewById(R.id.t2);
-            t2.setText("年龄:" + age+"\n" + "表情:" + em +"\n"+ "人种:" + ra);
+            t2.setText("年龄:" + age+"\n" + "心情:" + em +"\n"+ "人种:" + ra);
+
+            emotion0=em;
+
+
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
     }
-
-
-
-
-
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
